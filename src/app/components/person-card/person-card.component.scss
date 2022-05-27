@@ -1,0 +1,32 @@
+:host {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+}
+
+.user {
+  &__content {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+  }
+
+  &__photo {
+    width: fit-content;
+    max-height: 400px;
+  }
+
+  &__name {
+    font-size: 18px;
+    font-weight: 500;
+    align-self: flex-start;
+    padding: 0 30px;
+  }
+
+  &__buttons-container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    padding: 20px 30px;
+  }
+}

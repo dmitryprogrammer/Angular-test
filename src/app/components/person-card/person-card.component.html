@@ -1,0 +1,20 @@
+<mat-card *ngIf="user$ | async as user">
+  <mat-card-content class="user__content">
+    <img mat-card-image [src]="user.userPic" [alt]="user.name + ' ' + user.age" class="user__photo">
+
+    <div class="user__name">
+      {{user.name}},&nbsp;{{user.age}}
+    </div>
+  </mat-card-content>
+
+  <mat-card-actions class="user__buttons-container">
+    <ng-container *ngIf="!reacted">
+      <button mat-button (click)="react()">Like</button>
+      <button mat-button (click)="react()">Dislike</button>
+    </ng-container>
+
+    <ng-container *ngIf="reacted">
+      <button mat-button (click)="reaction(user.id)">Ok</button>
+    </ng-container>
+  </mat-card-actions>
+</mat-card>
